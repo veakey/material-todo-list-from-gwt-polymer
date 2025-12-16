@@ -26,7 +26,7 @@ export interface AddItemDialogLabels {
   imports: [CommonModule, ReactiveFormsModule, MatDialogModule, MatFormFieldModule, MatInputModule, MatButtonModule],
   template: `
     <h2 mat-dialog-title>{{ labels.title }}</h2>
-    <form [formGroup]="form" (ngSubmit)="submit()" class="dialog-form" mat-dialog-content>
+    <form [formGroup]="form" (ngSubmit)="submit()" class="dialog-form-add-todo" mat-dialog-content>
       <mat-form-field appearance="outline" class="full">
         <mat-label>{{ labels.titleLabel }}</mat-label>
         <input matInput formControlName="title" required />
@@ -45,11 +45,11 @@ export interface AddItemDialogLabels {
   `,
   styles: [
     `
-      .dialog-form {
+      .dialog-form-add-todo {
         display: flex;
         flex-direction: column;
         gap: 12px;
-        padding-top: 8px;
+        padding-top: 8px!important;
       }
       .full {
         width: 100%;
