@@ -1,0 +1,78 @@
+<mat-sidenav-container class="shell" autosize>
+  <mat-sidenav #drawer class="sidenav" mode="side" [fixedInViewport]="true">
+    <mat-toolbar color="primary">Menu</mat-toolbar>
+    <mat-nav-list>
+      <a mat-list-item (click)="clearAll()">
+        <mat-icon matListItemIcon>delete</mat-icon>
+        <span matListItemTitle>{{ t('menuClearAll') }}</span>
+      </a>
+      <a mat-list-item (click)="clearDone()">
+        <mat-icon matListItemIcon>clear</mat-icon>
+        <span matListItemTitle>{{ t('menuClearDone') }}</span>
+      </a>
+      <mat-divider></mat-divider>
+      <a mat-list-item (click)="notImplemented(t('menuSettings'))">
+        <mat-icon matListItemIcon>settings</mat-icon>
+        <span matListItemTitle>{{ t('menuSettings') }}</span>
+      </a>
+      <a mat-list-item (click)="notImplemented(t('menuAbout'))">
+        <mat-icon matListItemIcon>help</mat-icon>
+        <span matListItemTitle>{{ t('menuAbout') }}</span>
+      </a>
+    </mat-nav-list>
+  </mat-sidenav>
+
+  <mat-sidenav-content>
+    <mat-toolbar color="primary" class="toolbar">
+      <button mat-icon-button (click)="drawer.toggle()" aria-label="Menu">
+        <mat-icon>menu</mat-icon>
+      </button>
+      <span class="title">{{ t('title') }}</span>
+      <span class="spacer"></span>
+      <mat-select
+        class="lang-select"
+        [value]="lang()"
+        (selectionChange)="setLang($event.value)"
+        aria-label="Language"
+      >
+        <mat-option value="en">English</mat-option>
+        <mat-option value="fr">Français</mat-option>
+        <mat-option value="de">Deutsch</mat-option>
+      </mat-select>
+    </mat-toolbar>
+
+    <main class="content">
+      <ng-container *ngIf="hasItems(); else empty">
+        <mat-list>
+          <mat-list-item
+            *ngFor="let item of items()"
+            (click)="toggle(item.id)"
+            class="item"
+            matRipple
+          >
+            <mat-checkbox
+              [checked]="item.done"
+              (click)="$event.stopPropagation()"
+              (change)="toggle(item.id)"
+            ></mat-checkbox>
+            <div class="text">
+              <div class="item-title" [ngClass]="{ done: item.done }">{{ item.title }}</div>
+              <div class="item-desc" *ngIf="item.description">{{ item.description }}</div>
+            </div>
+          </mat-list-item>
+        </mat-list>
+      </ng-container>
+      <ng-template #empty>
+        <div class="empty">
+          <mat-icon>check_circle</mat-icon>
+          <div>{{ t('empty') }}</div>
+          <div class="empty-sub">{{ t('emptySubtitle') }}</div>
+        </div>
+      </ng-template>
+    </main>
+
+    <button mat-fab color="accent" class="fab" aria-label="Ajouter" (click)="openAddDialog()">
+      <mat-icon>add</mat-icon>
+    </button>
+  </mat-sidenav-content>
+</mat-sidenav-container>

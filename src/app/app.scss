@@ -1,0 +1,144 @@
+:host {
+  display: block;
+  height: 100vh;
+}
+
+.shell {
+  height: 100%;
+  background: #ededed;
+}
+
+.toolbar {
+  position: sticky;
+  top: 0;
+  z-index: 2;
+  background: #4285f4;
+  color: #fff;
+}
+
+.toolbar .mat-mdc-icon-button .mat-icon {
+  color: #fff;
+}
+
+.sidenav {
+  width: 240px;
+  background: #fff;
+  border-right: 1px solid #e0e0e0;
+}
+
+.mat-mdc-list-item__primary-text,
+.mat-mdc-list-item__secondary-text {
+  color: rgba(0, 0, 0, 0.8);
+}
+
+.title {
+  margin-left: 12px;
+  font-weight: 600;
+}
+
+.spacer {
+  flex: 1 1 auto;
+}
+
+.lang-select {
+  color: #fff;
+  min-width: 120px;
+  max-width: 140px;
+  flex: 0 0 auto;
+  --mdc-theme-text-primary-on-background: #fff;
+}
+
+.lang-select .mat-mdc-select-trigger {
+  color: #fff;
+}
+
+.lang-select .mat-mdc-select-arrow svg {
+  fill: #fff;
+}
+
+.content {
+  padding: 24px;
+  min-height: calc(100vh - 2*64px);
+  position: relative;
+  display: flex;
+  justify-content: center;
+}
+
+mat-list {
+  background: #fff;
+  border-radius: 8px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.16);
+  width: 100%;
+  max-width: 1180px;
+  padding: 0;
+}
+
+.mdc-list-item.mdc-list-item--with-one-line {
+  height: auto;
+  min-height: 48px;
+}
+
+.item {
+  cursor: pointer;
+  border-bottom: 1px solid #e0e0e0;
+  border-radius: 0;
+  margin: 0;
+}
+
+.item:last-of-type {
+  border-bottom: none;
+}
+
+.item-title {
+  font-weight: 600;
+}
+
+.item-desc {
+  color: rgba(0, 0, 0, 0.6);
+  font-size: 14px;
+}
+
+.done {
+  text-decoration: line-through;
+  color: rgba(0, 0, 0, 0.5);
+}
+
+.text {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  margin-left: 12px;
+}
+
+.empty {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  color: rgba(0, 0, 0, 0.6);
+  padding: 40px 0;
+}
+
+.empty-sub {
+  color: rgba(0, 0, 0, 0.55);
+}
+
+.fab {
+  position: fixed;
+  right: 24px;
+  bottom: 24px;
+  z-index: 3;
+  background: #e53935;
+  color: #fff;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.24);
+}
+
+.mat-mdc-mini-fab.mat-accent,
+.mat-mdc-fab.mat-accent {
+  background-color: #e53935;
+}
+
+.mat-mdc-dialog-container .mat-mdc-dialog-title + .mat-mdc-dialog-content {
+  padding-top: 8px;
+}

@@ -1,0 +1,24 @@
+@use '@angular/material' as mat;
+
+@include mat.core();
+
+$todo-theme: mat.define-theme(
+  (
+    color: (
+      theme-type: light,
+      primary: mat.$blue-palette,
+      tertiary: mat.$red-palette,
+    )
+  )
+);
+
+:root {
+  @include mat.all-component-themes($todo-theme);
+  @include mat.all-component-typographies($todo-theme);
+}
+
+body {
+  margin: 0;
+  font-family: Roboto, 'Helvetica Neue', Arial, sans-serif;
+  background: #ededed;
+}
