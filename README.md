@@ -1,59 +1,28 @@
-# AngularApp
+# Todo list – POC Angular 21
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 21.0.3.
+Ce dépôt est un proof-of-concept Angular 21 fonctionnel réalisé à partir du projet GWT/Polymer d’origine : https://github.com/manolo/gwt-polymer-todo-list.  
+Objectif : reprendre le même scope (todo list simple) et valider une implémentation moderne Angular + Angular Material.
 
-## Development server
+## Fonctionnalités
+- Ajout, bascule et suppression des tâches (tout supprimer, supprimer les terminées).
+- Persistance locale via `localStorage` pour ne pas perdre les tâches au rechargement.
+- Dialogs Material pour confirmation, ajout, paramètres (placeholder) et à-propos (libs & licence).
+- Sélecteur de langue (EN/FR/DE) avec traductions regroupées dans `src/app/i18n/translations.ts`.
 
-To start a local development server, run:
-
+## Démarrage
 ```bash
-ng serve
+npm install
+npm start
 ```
+Ouvrir http://localhost:4200/.
 
-Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
-
-## Code scaffolding
-
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
-
+## Construction
 ```bash
-ng generate component component-name
+npm run build
 ```
+Le bundle de production est généré dans `dist/`.
 
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
-
-```bash
-ng generate --help
-```
-
-## Building
-
-To build the project run:
-
-```bash
-ng build
-```
-
-This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
-
-## Running unit tests
-
-To execute unit tests with the [Vitest](https://vitest.dev/) test runner, use the following command:
-
-```bash
-ng test
-```
-
-## Running end-to-end tests
-
-For end-to-end (e2e) testing, run:
-
-```bash
-ng e2e
-```
-
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
-
-## Additional Resources
-
-For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+## Notes techniques
+- Angular 21 + Angular Material.
+- Styles et templates des composants dialog sont séparés (`*.html` / `*.scss`).
+- Les textes sont typés (`SupportedLang`, `TranslationKey`) et centralisés dans `src/app/i18n/translations.ts`.
