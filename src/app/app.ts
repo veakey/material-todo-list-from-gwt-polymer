@@ -137,6 +137,12 @@ export class App {
     this.snackBar.open(t.snackClearedDone, undefined, { duration: 2000 });
   }
 
+  seedSample() {
+    const t = translations[this.lang()];
+    this.todo.seedSample();
+    this.snackBar.open(t.seedAdded, undefined, { duration: 2000 });
+  }
+
   notImplemented(label: string) {
     const t = translations[this.lang()];
     this.snackBar.open(`${label}: ${t.notImplemented}`, undefined, { duration: 2000 });

@@ -10,6 +10,10 @@
         <mat-icon matListItemIcon>clear</mat-icon>
         <span matListItemTitle>{{ t('menuClearDone') }}</span>
       </a>
+      <a mat-list-item (click)="seedSample()">
+        <mat-icon matListItemIcon>playlist_add</mat-icon>
+        <span matListItemTitle>{{ t('menuSeedSample') }}</span>
+      </a>
       <mat-divider></mat-divider>
       <a mat-list-item (click)="openSettingsDialog()">
         <mat-icon matListItemIcon>settings</mat-icon>

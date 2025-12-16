@@ -44,6 +44,40 @@ export class TodoService {
     this.itemsSignal.update(list => list.filter(item => !item.done));
   }
 
+  seedSample() {
+    const samples: Array<{ title: string; description?: string; done?: boolean }> = [
+      { title: 'Acheter du lait' },
+      { title: 'Envoyer le rapport hebdo', done: true },
+      { title: 'Réserver un billet de train' },
+      { title: 'Appeler le plombier', description: 'Fuite cuisine' },
+      { title: 'Préparer la présentation' },
+      { title: 'Aller courir 30 min', done: true },
+      { title: 'Mettre à jour le CV' },
+      { title: 'Faire les courses du week-end' },
+      { title: 'Lire l’article sauvegardé' },
+      { title: 'Nettoyer la voiture' },
+      { title: 'Planifier les vacances' },
+      { title: 'Payer la facture électricité' },
+      { title: 'Prendre rendez-vous médecin', done: true },
+      { title: 'Tester la nouvelle appli' },
+      { title: 'Organiser les favoris du navigateur' },
+      { title: 'Sauvegarder les photos' },
+      { title: 'Classer les mails non lus' },
+      { title: 'Mettre à jour les mots de passe' },
+      { title: 'Remplacer la pile du détecteur de fumée' },
+      { title: 'Préparer la liste de lecture' },
+    ];
+
+    this.itemsSignal.set(
+      samples.map(item => ({
+        id: crypto.randomUUID(),
+        title: item.title.trim(),
+        description: item.description?.trim() || '',
+        done: Boolean(item.done),
+      })),
+    );
+  }
+
   private restoreFromStorage() {
     try {
       const raw = localStorage.getItem(this.storageKey);

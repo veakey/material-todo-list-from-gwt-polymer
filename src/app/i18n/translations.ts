@@ -6,6 +6,7 @@ export type TranslationKey =
   | 'menuClearDone'
   | 'menuSettings'
   | 'menuAbout'
+  | 'menuSeedSample'
   | 'settingsTitle'
   | 'settingsIntro'
   | 'settingsComingSoon'
@@ -25,6 +26,7 @@ export type TranslationKey =
   | 'addDialogCancel'
   | 'addDialogOk'
   | 'snackAdded'
+  | 'seedAdded'
   | 'snackClearedAll'
   | 'snackClearedDone'
   | 'confirmClearAllMessage'
@@ -43,6 +45,7 @@ export const translations: Translations = {
     menuClearDone: 'Clear Done',
     menuSettings: 'Settings',
     menuAbout: 'About',
+    menuSeedSample: 'Populate sample todos',
     settingsTitle: 'Settings',
     settingsIntro: 'Fine-tune the app to your preferences.',
     settingsComingSoon: 'More options will be added soon.',
@@ -62,6 +65,7 @@ export const translations: Translations = {
     addDialogCancel: 'Cancel',
     addDialogOk: 'OK',
     snackAdded: 'Task added',
+    seedAdded: 'Sample tasks added',
     snackClearedAll: 'List cleared',
     snackClearedDone: 'Done tasks removed',
     confirmClearAllMessage: 'Remove all items?',
@@ -75,6 +79,7 @@ export const translations: Translations = {
     menuClearDone: 'Effacer faits',
     menuSettings: 'Paramètres',
     menuAbout: 'À propos',
+    menuSeedSample: 'Peupler avec des tâches de démonstration',
     settingsTitle: 'Paramètres',
     settingsIntro: 'Ajustez les préférences de l’application.',
     settingsComingSoon: 'Davantage d’options arrivent bientôt.',
@@ -94,6 +99,7 @@ export const translations: Translations = {
     addDialogCancel: 'Annuler',
     addDialogOk: 'OK',
     snackAdded: 'Tâche ajoutée',
+    seedAdded: 'Tâches de démonstration ajoutées',
     snackClearedAll: 'Liste vidée',
     snackClearedDone: 'Tâches terminées supprimées',
     confirmClearAllMessage: 'Supprimer toutes les tâches ?',
@@ -107,6 +113,7 @@ export const translations: Translations = {
     menuClearDone: 'Erledigte löschen',
     menuSettings: 'Einstellungen',
     menuAbout: 'Über',
+    menuSeedSample: 'Beispielaufgaben befüllen',
     settingsTitle: 'Einstellungen',
     settingsIntro: 'Passen Sie die App an Ihre Vorlieben an.',
     settingsComingSoon: 'Weitere Optionen folgen bald.',
@@ -126,6 +133,7 @@ export const translations: Translations = {
     addDialogCancel: 'Abbrechen',
     addDialogOk: 'OK',
     snackAdded: 'Aufgabe hinzugefügt',
+    seedAdded: 'Beispielaufgaben hinzugefügt',
     snackClearedAll: 'Liste geleert',
     snackClearedDone: 'Erledigte entfernt',
     confirmClearAllMessage: 'Alle Aufgaben entfernen?',
