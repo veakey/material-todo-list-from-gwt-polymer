@@ -26,3 +26,12 @@ Le bundle de production est généré dans `dist/`.
 - Angular 21 + Angular Material.
 - Styles et templates des composants dialog sont séparés (`*.html` / `*.scss`).
 - Les textes sont typés (`SupportedLang`, `TranslationKey`) et centralisés dans `src/app/i18n/translations.ts`.
+
+## Captures d’écran
+- État vide (aucune tâche, invite à en ajouter) :
+  
+  ![Écran vide](docs/empty.png)
+
+- État rempli (liste peuplée, certaines tâches cochées) :
+  
+  ![Écran avec tâches](docs/full.png)
