@@ -16,6 +16,8 @@ import { TodoService } from './services/todo.service';
 import { AddItemDialogComponent, AddItemData } from './components/add-item-dialog.component';
 import { ConfirmDialogComponent } from './components/confirm-dialog.component';
 import { Item } from './models/item';
+import { SettingsDialogComponent } from './components/settings-dialog.component';
+import { AboutDialogComponent } from './components/about-dialog.component';
 
 @Component({
   selector: 'app-root',
@@ -36,6 +38,10 @@ import { Item } from './models/item';
     MatTooltipModule,
     MatRippleModule,
     MatSelectModule,
+    AddItemDialogComponent,
+    ConfirmDialogComponent,
+    SettingsDialogComponent,
+    AboutDialogComponent,
   ],
   templateUrl: './app.html',
   styleUrl: './app.scss',
@@ -56,6 +62,16 @@ export class App {
         | 'menuClearDone'
         | 'menuSettings'
         | 'menuAbout'
+        | 'settingsTitle'
+        | 'settingsIntro'
+        | 'settingsComingSoon'
+        | 'settingsClose'
+        | 'aboutTitle'
+        | 'aboutIntro'
+        | 'aboutLibsTitle'
+        | 'aboutLicenseTitle'
+        | 'aboutLicenseValue'
+        | 'aboutClose'
         | 'empty'
         | 'emptySubtitle'
         | 'addDialogTitle'
@@ -79,6 +95,16 @@ export class App {
       menuClearDone: 'Clear Done',
       menuSettings: 'Settings',
       menuAbout: 'About',
+      settingsTitle: 'Settings',
+      settingsIntro: 'Fine-tune the app to your preferences.',
+      settingsComingSoon: 'More options will be added soon.',
+      settingsClose: 'Close',
+      aboutTitle: 'About',
+      aboutIntro: 'Lightweight todo list using Angular & Angular Material.',
+      aboutLibsTitle: 'Libraries',
+      aboutLicenseTitle: 'License',
+      aboutLicenseValue: 'MIT License (see LICENSE file)',
+      aboutClose: 'Close',
       empty: 'Nothing to do',
       emptySubtitle: 'Add a task to get started',
       addDialogTitle: 'Add Item',
@@ -101,6 +127,16 @@ export class App {
       menuClearDone: 'Effacer faits',
       menuSettings: 'Paramètres',
       menuAbout: 'À propos',
+      settingsTitle: 'Paramètres',
+      settingsIntro: 'Ajustez les préférences de l’application.',
+      settingsComingSoon: 'Davantage d’options arrivent bientôt.',
+      settingsClose: 'Fermer',
+      aboutTitle: 'À propos',
+      aboutIntro: 'Liste de tâches légère avec Angular & Angular Material.',
+      aboutLibsTitle: 'Bibliothèques',
+      aboutLicenseTitle: 'Licence',
+      aboutLicenseValue: 'Licence MIT (voir le fichier LICENSE)',
+      aboutClose: 'Fermer',
       empty: 'Aucune tâche',
       emptySubtitle: 'Ajoutez une tâche pour commencer',
       addDialogTitle: 'Ajouter une tâche',
@@ -123,6 +159,16 @@ export class App {
       menuClearDone: 'Erledigte löschen',
       menuSettings: 'Einstellungen',
       menuAbout: 'Über',
+      settingsTitle: 'Einstellungen',
+      settingsIntro: 'Passen Sie die App an Ihre Vorlieben an.',
+      settingsComingSoon: 'Weitere Optionen folgen bald.',
+      settingsClose: 'Schließen',
+      aboutTitle: 'Über',
+      aboutIntro: 'Leichte To-do-Liste mit Angular & Angular Material.',
+      aboutLibsTitle: 'Bibliotheken',
+      aboutLicenseTitle: 'Lizenz',
+      aboutLicenseValue: 'MIT-Lizenz (siehe LICENSE)',
+      aboutClose: 'Schließen',
       empty: 'Keine Aufgaben',
       emptySubtitle: 'Füge eine Aufgabe hinzu, um zu starten',
       addDialogTitle: 'Aufgabe hinzufügen',
@@ -158,6 +204,39 @@ export class App {
       if (!result) return;
       this.todo.add(result.title, result.description);
       this.snackBar.open(t.snackAdded, undefined, { duration: 2000 });
+    });
+  }
+
+  openSettingsDialog() {
+    const t = this.translations[this.lang()];
+    this.dialog.open(SettingsDialogComponent, {
+      width: '420px',
+      data: {
+        title: t.settingsTitle,
+        intro: t.settingsIntro,
+        comingSoon: t.settingsComingSoon,
+        closeLabel: t.settingsClose,
+      },
+    });
+  }
+
+  openAboutDialog() {
+    const t = this.translations[this.lang()];
+    this.dialog.open(AboutDialogComponent, {
+      width: '480px',
+      data: {
+        title: t.aboutTitle,
+        intro: t.aboutIntro,
+        libsTitle: t.aboutLibsTitle,
+        libs: [
+          { name: 'Angular', version: '^21.0.0' },
+          { name: 'Angular Material', version: '^21.0.3' },
+          { name: 'RxJS', version: '~7.8.0' },
+        ],
+        licenseTitle: t.aboutLicenseTitle,
+        licenseValue: t.aboutLicenseValue,
+        closeLabel: t.aboutClose,
+      },
     });
   }
 

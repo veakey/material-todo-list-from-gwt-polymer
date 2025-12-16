@@ -11,11 +11,11 @@
         <span matListItemTitle>{{ t('menuClearDone') }}</span>
       </a>
       <mat-divider></mat-divider>
-      <a mat-list-item (click)="notImplemented(t('menuSettings'))">
+      <a mat-list-item (click)="openSettingsDialog()">
         <mat-icon matListItemIcon>settings</mat-icon>
         <span matListItemTitle>{{ t('menuSettings') }}</span>
       </a>
-      <a mat-list-item (click)="notImplemented(t('menuAbout'))">
+      <a mat-list-item (click)="openAboutDialog()">
         <mat-icon matListItemIcon>help</mat-icon>
         <span matListItemTitle>{{ t('menuAbout') }}</span>
       </a>
