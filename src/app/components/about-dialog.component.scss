@@ -1,0 +1,43 @@
+.about-content {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  padding-top: 4px;
+}
+
+.intro {
+  margin: 0;
+}
+
+.section {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.section-title {
+  font-weight: 600;
+  color: #3f51b5;
+}
+
+ul {
+  margin: 0;
+  padding-left: 18px;
+}
+
+li {
+  display: flex;
+  gap: 8px;
+  align-items: baseline;
+}
+
+.version {
+  color: #666;
+  font-size: 13px;
+}
+
+.license {
+  color: #444;
+}
+
+

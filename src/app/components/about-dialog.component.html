@@ -1,0 +1,24 @@
+<h2 mat-dialog-title>{{ data.title }}</h2>
+<div mat-dialog-content class="about-content">
+  <p class="intro">{{ data.intro }}</p>
+
+  <div class="section" *ngIf="data.libs?.length">
+    <div class="section-title">{{ data.libsTitle }}</div>
+    <ul>
+      <li *ngFor="let lib of data.libs">
+        <strong>{{ lib.name }}</strong>
+        <span class="version">{{ lib.version }}</span>
+      </li>
+    </ul>
+  </div>
+
+  <div class="section">
+    <div class="section-title">{{ data.licenseTitle }}</div>
+    <div class="license">{{ data.licenseValue }}</div>
+  </div>
+</div>
+<mat-dialog-actions align="end">
+  <button mat-button mat-dialog-close>{{ data.closeLabel }}</button>
+</mat-dialog-actions>
+
+
